@@ -94,11 +94,11 @@ function comparePalindromes(birthdate){
     // console.log(counterDecrease)
 
     if (counterIncrease <= counterDecrease){
-        outputDiv.innerText = `Opps, your birthdate isn't a Palindrome 😥. Next Palindrome is on ${incrementDate.day}-${incrementDate.month}-${incrementDate.year} and it is ${counterIncrease} days away`
+        outputDiv.innerText = `Opps, your birthdate isn't a Palindrome 😥. Nearest Palindrome is on ${incrementDate.day}-${incrementDate.month}-${incrementDate.year} and it is ${counterIncrease} days away`
         
     }
     else {
-        outputDiv.innerText = `Opps, your birthdate isn't a Palindrome 😥. Next Palindrome is on ${decrementDate.day}-${decrementDate.month}-${decrementDate.year} and it was ${counterDecrease} days before`
+        outputDiv.innerText = `Opps, your birthdate isn't a Palindrome 😥. Nearest Palindrome was on ${decrementDate.day}-${decrementDate.month}-${decrementDate.year} and it was ${counterDecrease} days before`
         
     }
     
