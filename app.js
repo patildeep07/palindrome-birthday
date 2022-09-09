@@ -43,13 +43,13 @@ function getAllDateFormats(date){
     var mmyydd = dateStr.month + dateStr.year.slice(-2) + dateStr.day
     var yyddmm = dateStr.year.slice(-2) + dateStr.day + dateStr.month
 
-    // console.log(ddmmyyyy)
+    // console.log(ddmmyyyy," ", mmyyyydd, " ",yyyyddmm, " ",ddmmyy, " ",mmyydd, " ",yyddmm)
     return [ddmmyyyy, mmyyyydd, yyyyddmm, ddmmyy, mmyydd, yyddmm]
 }
 
 function checkPalindromeForAllDates(date) {
     var dateStr = convertDateString(date)
-
+    // console.log(dateStr)
     var allDates = getAllDateFormats(dateStr)
 
     var palindromeList = [];
@@ -57,6 +57,7 @@ function checkPalindromeForAllDates(date) {
     for ( i = 0; i < allDates.length; i++){
         var result = isPalindrome(allDates[i]);
         palindromeList.push(result);
+        console.log(palindromeList)
     }
 
     return palindromeList
@@ -247,16 +248,23 @@ function clickHandler(e){
     // console.log(birthdate)
     if (inputBirthdate.value != ""){
         var palindromeString = checkPalindromeForAllDates(birthdate)
-
-        for (index = 0; index < palindromeString.length; index++){
+        var boolCount = 0
+        // console.log(palindromeString)
+        for (index = 0; index <= palindromeString.length; index++){
+            // console.log(palindromeString)
             if(palindromeString[index] === true){
-                console.log("Is a Palindrome");
+                // console.log("Is a Palindrome");
+                outputDiv.innerText = "Is a Palindrome"
+                boolCount = 1;
                 break;
             }
-            else{
-                comparePalindromes(birthdate)
-                break;
+            else {           
+                // comparePalindromes(birthdate)
+                // break;
             }
+        }
+        if (boolCount === 0){
+            comparePalindromes(birthdate)
         }
     }
     else {
